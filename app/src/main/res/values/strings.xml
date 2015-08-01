@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Divvy</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_station_title">Station selection</string>>
+    <string name="station_title_label">Station</string>>
+    <string name="station_title_hint">Write station title here</string>>
+    <string name="station_details_label">Details</string>>
+    <string name="station_passed_label">Station completed</string>
+    <string name="number_docks_available">Nb stations available:</string>
+    <string name="number_bikes_available">Nb bikes able:</string>
+    <string name="number_total_docks">Nb total stations:</string>
+</resources>
