@@ -2,20 +2,25 @@ package com.cocorporation.divvy.graphicstructure;
 
 import android.content.Context;
 
+import com.cocorporation.divvy.connection.ConnectionTestActivity;
 import com.cocorporation.divvy.data.Station;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
+import android.widget.ArrayAdapter;
+
 /**
  * Created by Corentin on 5/3/2015.
  */
 public class StationLab {
-    private ArrayList<Station> mStations;
+    private static ArrayList<Station> mStations;
 
     private static StationLab sLevelLab;
     private Context mAppContext;
+
+    private static ArrayAdapter<Station> adapter;
 
     private StationLab(Context appContext) {
         mAppContext = appContext;
@@ -30,6 +35,7 @@ public class StationLab {
         stat1.setId(UUID.randomUUID());
         mStations.add(stat1);
 
+        /*
         Station stat2 = new Station();
         stat2.setStationName("Second station");
         stat2.setTotalDocks(25);
@@ -37,7 +43,7 @@ public class StationLab {
         stat2.setAvailableBikes(5);
         stat2.setLastCommunicationTime(new Date(2015, 07, 26));
         stat2.setId(UUID.randomUUID());
-        mStations.add(stat2);
+        mStations.add(stat2);*/
 
         /*WS CALL*/
     }
@@ -59,5 +65,13 @@ public class StationLab {
 
     public ArrayList<Station> getStations() {
         return mStations;
+    }
+
+    public static void setAdapter(ArrayAdapter<Station> adapter) {
+        StationLab.adapter = adapter;
+    }
+
+    public static void refreshList(){
+        ConnectionTestActivity.makeJsonArrayRequest(mStations, adapter);
     }
 }

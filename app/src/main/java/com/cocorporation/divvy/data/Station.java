@@ -8,6 +8,7 @@ import java.util.UUID;
  */
 public class Station {
     private UUID id;
+    private int idOrigin;
     private String stationName;
     private int availableDocks;
     private int totalDocks;
@@ -28,6 +29,10 @@ public class Station {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public void setIdOrigin(int idOrigin) {
+        this.idOrigin = idOrigin;
     }
 
     public void setStationName(String stationName) {
@@ -102,6 +107,10 @@ public class Station {
 
     public UUID getId() {
         return id;
+    }
+
+    public int getIdOrigin() {
+        return idOrigin;
     }
 
     public String getStationName() {

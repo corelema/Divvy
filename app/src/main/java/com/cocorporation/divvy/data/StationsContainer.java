@@ -9,4 +9,20 @@ import java.util.List;
 public class StationsContainer {
     private Date executionTime;
     private List<Station> stationBeanList;
+
+    public void setExecutionTime(Date executionTime) {
+        this.executionTime = executionTime;
+    }
+
+    public void setStationBeanList(List<Station> stationBeanList) {
+        this.stationBeanList = stationBeanList;
+    }
+
+    public Date getExecutionTime() {
+        return executionTime;
+    }
+
+    public List<Station> getStationBeanList() {
+        return stationBeanList;
+    }
 }

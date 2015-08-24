@@ -27,6 +27,8 @@ public class StationListFragment extends ListFragment {
         mStations = StationLab.get(getActivity()).getStations();
         StationAdapter adapter = new StationAdapter(mStations);
         setListAdapter(adapter);
+        StationLab.setAdapter(adapter);
+        StationLab.refreshList();
     }
 
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -62,9 +64,9 @@ public class StationListFragment extends ListFragment {
             TextView titleTextView =
                     (TextView)convertView.findViewById(R.id.station_list_item_titleTextView);
             titleTextView.setText(s.getStationName());
-            TextView dateTextView =
+            /*TextView dateTextView =
                     (TextView)convertView.findViewById(R.id.station_list_item_dateTextView);
-            dateTextView.setText(s.getLastCommunicationTime().toString());
+            dateTextView.setText(s.getLastCommunicationTime().toString());*/
             //CheckBox PassedCheckBox =
                     //(CheckBox)convertView.findViewById(R.id.station_list_item_passedCheckBox);
             //PassedCheckBox.setChecked(s.get());
